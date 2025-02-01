@@ -2,9 +2,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import logo from "./assets/logo.png";
-import email from "./assets/email.png";
-import twitter from "./assets/twitter.png";
-import telegram from "./assets/telegram.png";
+import email from "./assets/email.svg";
+import twitter from "./assets/twitter.svg";
+import telegram from "./assets/telegram.svg";
 import partnerImg from "./assets/partner.png";
 
 import OnChainData from "./components/OnchainData";
@@ -85,7 +85,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      SetIsScrollDown(window.scrollY > 50 ? true : false);
+      SetIsScrollDown(window.scrollY > 10 ? true : false);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -124,16 +124,16 @@ function App() {
         <div className="w-full relative overflow-hidden">
           <div className="absolute top-[150px] sm:top-0 right-[100px] sm:right-[200px] z-[-1] radial-gradient-1 max-w-[1000px] lg:w-[80vw] lg:h-[1600px] md:w-[60vw] md:h-[1200px] sm:w-[40vw] sm:h-[1000px] w-[40vw] h-[600px]"></div>
           <div
-            className={`w-full flex justify-center items-center transition ease-in-out delay-150 fixed z-[100000] border-b-2 border-white ${
+            className={`w-full flex justify-center items-center fixed z-[10000] border-b-2 border-white transition-all duration-1000 ease-out ${
               isScrollDown
-                ? "bg-gray-900 h-[70px] sm:h-[90px] md:h-[110px] lg:h-[130px] "
-                : "bg-transparent h-[100px] sm:h-[120px] md:h-[130px] lg:h-[150px] "
+                ? "bg-black opacity-90 h-[70px] sm:h-[90px] md:h-[110px] lg:h-[130px]"
+                : "bg-transparent h-[100px] sm:h-[120px] md:h-[130px] lg:h-[150px]"
             }`}
           >
             <img
               src={logo}
               alt="logo"
-              className={`transition ease-in-out delay-150 ${
+              className={`${
                 !isScrollDown
                   ? "w-[50px] lg:w-[100px] md:w-[80px] sm:w-[70px] h-[50px] sm:h-[70px] md:h-[80px] lg:h-[100px]"
                   : "w-[40px] lg:w-[80px] md:w-[60px] sm:w-[50px] h-[40px] sm:h-[50px] md:h-[60px] lg:h-[80px]"
@@ -148,8 +148,8 @@ function App() {
             data-aos-easing="easing-in-out"
           >
             <div className="flex justify-center">
-              <div className="max-w-[1500px] w-[90%] rounded-[20px] my-[10px] sm:my-[20px] md:my-[30px] lg:my-[80px] mx-[20px] text-center bg-[#D9D9D920] p-[10px]">
-                <div className="w-full border-2 border-solid border-gray-500 rounded-[10px] sm:rounded-[20px] uppercase leading-normal tracking-widest text-[10px] sm:text-[15px] md:text-[15px] lg:text-[20px] xl:text-[25px] px-[30px]">
+              <div className="max-w-[2000px] min-w-[300px] w-[90%] rounded-[20px] my-[10px] sm:my-[20px] md:my-[30px] lg:my-[80px] mx-[10%] text-center bg-[#D9D9D920] p-[10px]">
+                <div className="w-full border-2 border-solid border-gray-500 rounded-[10px] sm:rounded-[20px] uppercase leading-normal tracking-widest text-[10px] sm:text-[15px] lg:text-[20px] xl:text-[25px] 2xl:text-[30px] py-3 px-[30px]">
                   TonTickets is a telegram mini-app in where people can win many
                   different prizes ranging from popular memecoins to the rarest
                   and most expensive NFT on TON chain
@@ -160,69 +160,105 @@ function App() {
 
           <div className="flex flex-col items-center justify-center w-full gap-[100px] my-[30px] sm:my-[50px] md:my-[80px]">
             <div
-              className="relative w-[300px] md:w-[400px] lg:w-[520px] text-center flex flex-col items-center mb-[2px] lg:mb-[50px]"
+              className="relative max-w-[800px] w-[35%] min-w-[300px] text-center flex flex-col items-center mb-[2px] lg:mb-[50px]"
               data-aos="fade-up"
               data-aos-delay="100"
               data-aos-duration="1000"
               data-aos-easing="easing-in-out"
             >
-              <div className="absolute z-10 right-[-5px] top-[-20px]">
-                <Ticket rotate={0} isSmall={true} />
+              <div className="absolute z-10 right-[-20px] top-[-20px] sm:right-[-15px] sm:top-[-20px] md:right-[-20px] md:top-[-20px] lg:right-[-15px] lg:top-[-20px] xl:right-[-10px] xl:top-[-20px]">
+                <Ticket rotate={20.92} size={{width: "48.48px", height: "43.09px"}} />
               </div>
-              <div className="absolute z-10 left-[-5px] top-[20px] sm:top-[50px] md:top-[55px] lg:top-[85px]">
-                <Ticket rotate={45} isSmall={true} />
+              <div className="absolute z-10 left-[-15px] top-[25px] sm:left-[-20px] sm:top-[40px] md:left-[-10px] md:top-[45px] lg:left-[-10px] lg:top-[60px] xl:left-[-10px] xl:top-[80px]">
+                <Ticket rotate={-31.95} size={{width: "48.48px", height: "43.09px"}} />
               </div>
-              <button className="cursor-pointer absolute z-20 gradient-button rounded-[5px] sm:rounded-[15px] px-[40px] sm:px-[45px] md:px-[65px] lg:px-[85px] xl:px-[60px] py-[10px] sm:py-[25px] md:py-[20px] lg:py-[30px] ring-2 ring-offset-4 ring-offset-black ring-[#720000] text-[15px] md:text-[20px] lg:text-[25px] xl:text-[30px]">
+              <button className="w-full cursor-pointer absolute z-20 gradient-button rounded-[10px] lg:rounded-[15px] md:px-px-[40px] lg:px-[50px] py-[15px] sm:py-[20px] md:py-[20px] lg:py-[30px] outline outline-offset-2 outline-2 outline-[#720000] text-[15px] md:text-[18px] xl:text-[25px] 2xl:text-[30px]">
                 Get Tickets Win Prizes
               </button>
             </div>
             <div
-              className="max-w-[1850px] w-[200px] sm:w-[600px] lg:w-[90%] my-[20px] sm:my-[60px] md:my-[100px] rounded-[20px] bg-gradient-to-r from-[#5B595980] to-[#2B2B2B80] p-[10px]"
+              className="max-w-[1850px] w-[300px] sm:w-[600px] lg:w-[90%] my-[20px] sm:my-[60px] md:my-[100px] rounded-[20px] bg-gradient-to-r from-[#5B595980] to-[#2B2B2B80] p-[10px]"
               data-aos="fade-up"
               data-aos-delay="100"
               data-aos-duration="1000"
               data-aos-easing="easing-in-out"
             >
-              <div className="w-full border-2 border-solid border-gray-500 rounded-[10px] sm:rounded-[20px] uppercase leading-normal tracking-widest text-[13px] sm:text-[15px] lg:text-[15px] xl:text-[20px] 2xl:text-[25px] px-[10px] pt-[50px] pb-[10px] relative">
-                <div className="absolute z-[-100] left-[20px] top-0">
-                  <Ticket rotate={327} isSmall={false} />
+              <div className="w-full h-full z-[-1] border-2 border-solid border-gray-500 rounded-[10px] sm:rounded-[20px] uppercase leading-normal tracking-widest text-[13px] sm:text-[15px] lg:text-[15px] xl:text-[20px] 2xl:text-[25px] px-[10px] pt-[50px] pb-[10px] relative">
+                <div className="absolute z-[-100] left-[20px] top-0 sm:block hidden">
+                  <Ticket rotate={327} size={{width: "41.81px", height: "37.07px"}}/>
                 </div>
-                <div className="absolute z-[-100] left-[20%] top-0">
-                  <Ticket rotate={193} isSmall={true} />
+                <div className="absolute z-[-100] left-[20%] top-0 sm:block hidden">
+                  <Ticket rotate={193} size={{width: "41.81px", height: "37.07px"}}/>
                 </div>
-                <div className="absolute z-[-100] left-[40%] top-0">
-                  <Ticket rotate={20.92} isSmall={true} />
+                <div className="absolute z-[-100] left-[50%] top-0 sm:block hidden">
+                  <Ticket rotate={20.92} size={{width: "41.81px", height: "37.07px"}}/>
                 </div>
-                <div className="absolute z-[-100] left-[60%] top-0">
-                  <Ticket rotate={347} isSmall={true} />
+                <div className="absolute z-[-100] left-[65%] top-0 sm:block hidden">
+                  <Ticket rotate={347} size={{width: "41.81px", height: "37.07px"}}/>
                 </div>
-                <div className="absolute z-[-100] left-[80%] top-0">
-                  <Ticket rotate={354} isSmall={false} />
+                <div className="absolute z-[-100] left-[80%] top-0 sm:block hidden">
+                  <Ticket rotate={354} size={{width: "51.14px", height: "45.26px"}}/>
                 </div>
-                <div className="absolute z-[-100] right-[10px] top-0">
-                  <Ticket rotate={170.18} isSmall={true} />
-                </div>
-
-                <div className="absolute z-[-100] left-[35%] top-[45%]">
-                  <Ticket rotate={343} isSmall={false} />
-                </div>
-                <div className="absolute z-[-100] left-[70%] top-[45%]">
-                  <Ticket rotate={26.97} isSmall={true} />
+                <div className="absolute z-[-1000] right-[10px] top-0 sm:block hidden">
+                  <Ticket rotate={170.18} size={{width: "41.81px", height: "37.07px"}}/>
                 </div>
 
-                <div className="absolute z-[-100] left-[16%] bottom-0">
-                  <Ticket rotate={20.55} isSmall={false} />
+                <div className="absolute z-[-10000] left-[40%] top-[40%] sm:block hidden">
+                  <Ticket rotate={343} size={{width: "51.14px", height: "45.26px"}}/>
                 </div>
-                <div className="absolute z-[-1] left-[35%] bottom-0">
-                  <Ticket rotate={216} isSmall={true} />
+                <div className="absolute z-[-10000] left-[72%] top-[40%] sm:block hidden">
+                  <Ticket rotate={27} size={{width: "41.81px", height: "37.07px"}}/>
                 </div>
-                <div className="absolute z-[-100] left-[55%] bottom-0">
-                  <Ticket rotate={250.62} isSmall={false} />
+
+                <div className="absolute z-[-100] left-[16%] bottom-0 sm:block hidden">
+                  <Ticket rotate={20.55} size={{width: "51.14px", height: "45.26px"}}/>
                 </div>
-                <div className="absolute z-[-100] left-[80%] bottom-0">
-                  <Ticket rotate={8.22} isSmall={false} />
+                <div className="absolute z-[-1] left-[35%] bottom-0 sm:block hidden">
+                  <Ticket rotate={216} size={{width: "41.81px", height: "37.07px"}}/>
                 </div>
-                <div className="flex flex-row flex-wrap justify-around items-center gap-[20px] sm:gap-[50px] lg:gap-[40px] lx:gap-[60px]">
+                <div className="absolute z-[-100] left-[55%] bottom-0 sm:block hidden">
+                  <Ticket rotate={250.62} size={{width: "51.14px", height: "45.26px"}}/>
+                </div>
+                <div className="absolute z-[-100] left-[80%] bottom-0 sm:block hidden">
+                  <Ticket rotate={8.22} size={{width: "51.14px", height: "45.26px"}}/>
+                </div>
+              {/* ------------------------------------------------------------------ */}
+                <div className="absolute z-[-100] left-[0] top-[10px] sm:hidden block">
+                  <Ticket rotate={-35} size={{width: "51.14px", height: "45.26px"}}/>
+                </div>
+                <div className="absolute z-[-100] right-[20px] top-0 sm:hidden block">
+                  <Ticket rotate={20.92} size={{width: "41.81px", height: "37.07px"}}/>
+                </div>
+
+                <div className="absolute z-[-100] right-[60px] top-[70px] sm:hidden block">
+                  <Ticket rotate={20.92} size={{width: "51.14px", height: "45.26px"}}/>
+                </div>
+
+                <div className="absolute z-[-100] left-[50px] top-[120px] sm:hidden block">
+                  <Ticket rotate={20.92} size={{width: "41.81px", height: "37.07px"}}/>
+                </div>
+
+                <div className="absolute z-[-100] left-[15px] bottom-[150px] sm:hidden block">
+                  <Ticket rotate={20.92} size={{width: "51.14px", height: "45.26px"}}/>
+                </div>
+
+                <div className="absolute z-[-100] right-[15px] bottom-[150px] sm:hidden block">
+                  <Ticket rotate={-20.92} size={{width: "51.14px", height: "45.26px"}}/>
+                </div>
+
+                <div className="absolute z-[-100] left-[120px] bottom-[100px] sm:hidden block">
+                  <Ticket rotate={80.92} size={{width: "41.81px", height: "37.07px"}}/>
+                </div>
+
+                <div className="absolute z-[-100] left-[10px] bottom-[10px] sm:hidden block">
+                  <Ticket rotate={20.92} size={{width: "41.81px", height: "37.07px"}}/>
+                </div>
+
+                <div className="absolute z-[-100] right-[10px] bottom-[10px] sm:hidden block">
+                  <Ticket rotate={-20.92} size={{width: "41.81px", height: "37.07px"}}/>
+                </div>
+                
+                <div className="flex flex-row flex-wrap justify-around items-center gap-[40px] sm:gap-[50px] lg:gap-[40px] lx:gap-[60px]">
                   {onChainData.map((item) => {
                     return <OnChainData name={item.name} value={item.value} />;
                   })}
@@ -259,7 +295,7 @@ function App() {
           </div>
         </div>
 
-        {/* <div className="radial-gradient-2 my-[50px] sm:my-[60px] md:my-[100px] z-[1000] flex lg:flex-row lg:justify-around flex-col gap-5 w-full max-w-[1500px]">
+        <div className="radial-gradient-2 mt-[50px] sm:mt-[60px] md:mt-[100px] z-[1000] flex md:flex-row md:justify-around flex-col gap-[50px] md:gap-1 w-full max-w-[1500px]">
           <div
             className="flex flex-col items-center gap-[20px] sm:gap-[50px]"
             data-aos="fade-up"
@@ -267,7 +303,7 @@ function App() {
             data-aos-duration="1000"
             data-aos-easing="easing-in-out"
           >
-            <p className="text-[20px] sm:text-[30px] md:text-[35px]">DEMO</p>
+            <p className="text-[20px] sm:text-[30px] md:text-[35px]">Demo</p>
             <Demo />
           </div>
           <div
@@ -277,13 +313,13 @@ function App() {
             data-aos-duration="1000"
             data-aos-easing="easing-in-out"
           >
-            <p className="text-[20px] sm:text-[30px] md:text-[35px]">ROADMAP</p>
+            <p className="text-[20px] sm:text-[30px] md:text-[35px]">RoadMap</p>
             <Roadmap />
           </div>
-        </div> */}
+        </div>
 
         <div
-          className="relative flex flex-col my-[50px] sm:my-[80px] md:my-[100px] gap-5 w-[90%] items-center overflow-hidden"
+          className="relative flex flex-col py-[20px] sm:py-[100px] lg:py-[150px] gap-5 w-[90%] items-center overflow-hidden"
           data-aos="fade-up"
           data-aos-delay="100"
           data-aos-duration="1000"
@@ -334,10 +370,10 @@ function App() {
                 data-aos-duration="1000"
                 data-aos-easing="easing-in-out"
               >
-                <div className="flex flex-row gap-2">
+                <div className="flex flex-row gap-2 justify-center items-center">
                   <img
                     src={telegram}
-                    className="w-[20px] sm:w-[30px] md:w-[50px]"
+                    className="w-[30px] md:w-[50px]"
                   />
                   <div>Partnership</div>
                 </div>
@@ -349,10 +385,10 @@ function App() {
                 data-aos-duration="1000"
                 data-aos-easing="easing-in-out"
               >
-                <div className="flex flex-row gap-2">
+                <div className="flex flex-row gap-2 justify-center items-center">
                   <img
                     src={telegram}
-                    className="w-[20px] sm:w-[30px] md:w-[50px]"
+                    className="w-[30px] md:w-[50px]"
                   />
                   <div>Support</div>
                 </div>
@@ -368,17 +404,17 @@ function App() {
               <a href={"http://#"}>
                 <img
                   src={twitter}
-                  className="w-[20px] sm:w-[30px] md:w-[50px]"
+                  className="w-[30px] md:w-[50px]"
                 />
               </a>
               <a href={"http://#"}>
                 <img
                   src={telegram}
-                  className="w-[20px] sm:w-[30px] md:w-[50px]"
+                  className="w-[30px] md:w-[50px]"
                 />
               </a>
               <a href={"http://#"}>
-                <img src={email} className="w-[20px] sm:w-[30px] md:w-[50px]" />
+                <img src={email} className="w-[30px] md:w-[50px]" />
               </a>
             </div>
           </div>
