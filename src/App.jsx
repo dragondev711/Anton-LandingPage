@@ -122,7 +122,7 @@ function App() {
     <>
       <div className="w-full flex flex-col items-center justify-center relative mb-[80px] sm:mb-[40px] md:mb-0">
         <div className="w-full relative overflow-hidden">
-          <div className="absolute top-[150px] sm:top-0 right-[100px] sm:right-[200px] z-[-1] radial-gradient-1 lg:w-[80vw] lg:h-[1600px] md:w-[60vw] md:h-[1200px] sm:w-[40vw] sm:h-[1000px] w-[40vw] h-[600px]"></div>
+          <div className="absolute top-[150px] sm:top-0 right-[100px] sm:right-[200px] z-[-1] radial-gradient-1 max-w-[1000px] lg:w-[80vw] lg:h-[1600px] md:w-[60vw] md:h-[1200px] sm:w-[40vw] sm:h-[1000px] w-[40vw] h-[600px]"></div>
           <div
             className={`w-full flex justify-center items-center fixed z-[10000] border-b-2 border-white transition-all duration-1000 ease-out ${
               isScrollDown
@@ -325,8 +325,8 @@ function App() {
           data-aos-duration="1000"
           data-aos-easing="easing-in-out"
         >
-          <div className="absolute z-[-1] radial-gradient-3 w-[50vw] h-[900px] top-[50px] rotate-[-20deg] sm:rotate-[-35deg] sm:w-[500px] sm:h-[1000px] sm:top-[120px] sm:left-[5vw] md:w-[500px] md:h-[1400px] md:left-[10vw] lg:w-[700px] md:top-[50px] lg:h-[1400px] lg:left-[10vw] lg:top-[50px]"></div>
-          <div className="flex flex-row gap-2 mt-[50px] mb-[5px] sm:my-[50px]">
+          <div className="absolute z-[-1] radial-gradient-3 left-[20vw] top-[200px] h-[500px] w-[50vw] sm:left-[20vw] sm:top-[-100px] sm:h-[800px] md:w-[40vw] md:left-[15vw] md:top-[-100px] md:h-[1000px] lg:w-[35vw] lg:h-[1600px] lg:left-[20vw] lg:top-[-300px]"></div>
+          <div className="flex flex-row gap-2">
             <span className="text-[20px] sm:text-[30px] md:text-[35px]">
               Partners
             </span>
